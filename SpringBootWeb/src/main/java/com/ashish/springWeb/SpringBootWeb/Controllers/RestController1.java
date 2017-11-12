@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ashish.springWeb.SpringBootWeb.Controllers.Model.Library;
 import com.ashish.springWeb.SpringBootWeb.Controllers.Model.Quote;
+import com.ashish.springWeb.SpringBootWeb.Service.LibraryService;
 import com.ashish.springWeb.SpringBootWeb.Service.QuoteListService;
 
 @RestController
@@ -14,6 +17,17 @@ import com.ashish.springWeb.SpringBootWeb.Service.QuoteListService;
 public class RestController1 {
 	@Autowired
 	private QuoteListService quoteListService;
+
+	@Autowired
+	private LibraryService libraryService;
+
+	public LibraryService getBookListService() {
+		return libraryService;
+	}
+
+	public void setBookListService(LibraryService libraryService) {
+		this.libraryService = libraryService;
+	}
 
 	public QuoteListService getQuoteListService() {
 		return quoteListService;
@@ -37,5 +51,10 @@ public class RestController1 {
 	@GetMapping("/quote/{id}")
 	public Quote getQuoteById(@PathVariable Integer id) {
 		return quoteListService.getQuoteById(id);
+	}
+
+	@GetMapping("/library")
+	public Library getLibrary() {
+		return libraryService.getLibrary();
 	}
 }

@@ -3,7 +3,7 @@ package com.ashish.springWeb.SpringBootWeb.Controllers.Model;
 public class Quote {
 	private Integer id;
 	private String quote;
-
+	
 	public Integer getId() {
 		return id;
 	}
