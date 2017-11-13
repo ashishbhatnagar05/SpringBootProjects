@@ -26,5 +26,6 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

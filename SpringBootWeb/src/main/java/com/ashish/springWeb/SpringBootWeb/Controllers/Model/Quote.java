@@ -20,4 +20,9 @@ public class Quote {
 		this.quote = quote;
 	}
 
+	@Override
+	public String toString() {
+		return "Quote [id=" + id + ", quote=" + quote + "]";
+	}
+
 }
