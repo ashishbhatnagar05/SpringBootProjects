@@ -2,15 +2,22 @@ package com.ashish.springWeb.SpringBootWeb.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-
 import com.ashish.springWeb.SpringBootWeb.Controllers.Model.Quote;
 
 @Service
 @Scope("singleton")
 public class QuoteListService {
+
+	public List<Quote> getListOfQuotes() {
+		return listOfQuotes;
+	}
+
+	public void setListOfQuotes(List<Quote> listOfQuotes) {
+		this.listOfQuotes = listOfQuotes;
+	}
+
 	List<Quote> listOfQuotes;
 
 	public List<Quote> getQuotes() {
